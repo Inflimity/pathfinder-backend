@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: pathfinder-api
+    runtime: docker
+    repo: https://github.com/Inflimity/pathfinder-backend
+    region: oregon 
+    plan: free 
+    rootDir: server
+    dockerContext: server
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: PORT
+        value: 8080
+      - key: Gemini:ApiKey
+        sync: false  # You must set this in the Render Dashboard
+      - key: ConnectionStrings:DefaultConnection
+        sync: false  # You must set this in the Render Dashboard
