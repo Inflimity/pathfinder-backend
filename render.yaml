@@ -6,7 +6,6 @@ services:
     region: oregon 
     plan: free 
     rootDir: server
-    dockerContext: server
     envVars:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
@@ -15,4 +14,6 @@ services:
       - key: Gemini__ApiKey
         sync: false
       - key: ConnectionStrings__DefaultConnection
+        sync: false
+      - key: Supabase__JwtSecret
         sync: false
